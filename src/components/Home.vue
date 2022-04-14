@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h5>{{ msg }}</h5>
     <button type="button" class="btn btn-outline-success" @click="gotoGoi()">
       Go to goi
     </button>
@@ -24,6 +23,7 @@
       Up
     </button>
     <hr />
+    <h5>{{ msg }}</h5>
     <div class="border border-success shadow p-2 mb-6 rounded">{{ data }}</div>
     <hr />
     <!-- <div v-for="item in data" :key="item.id" class="border border-success shadow p-3 mb-5 bg-white rounded">
@@ -77,7 +77,7 @@ export default {
     },
     getInfo() {
       axios
-        .get("http://localhost:2508/register/csv")
+        .get("http://localhost:2508/users/get_csv")
         .then(
           function (response) {
             this.data = response.data;
@@ -135,7 +135,7 @@ export default {
           function (response) {
             console.log(response.data);
             if (response.data === "OK") {
-              Common.makeToast('success');
+              Common.makeToast("success");
             }
           }.bind(this)
         )
@@ -143,7 +143,6 @@ export default {
           console.log(error);
         });
     },
-    
   },
 };
 </script>

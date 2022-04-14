@@ -21,12 +21,6 @@ export default {
         { id: 4, url: "/grammar", name: "文法" },
         { id: 5, url: "/contact", name: "連絡先" },
       ],
-      // initMenu: [
-      //   { id: 1, url: "/", name: "Home" },
-      //   { id: 2, url: "/goi", name: "Goi" },
-      //   { id: 3, url: "/kanji", name: "Kanji" },
-      //   { id: 4, url: "/grammar", name: "Grammar" },
-      // ],
       isDisplay: true,
     };
   },

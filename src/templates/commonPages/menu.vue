@@ -25,22 +25,27 @@
               >{{ item.name }}</router-link
             >
           </li>
-          
         </ul>
-        <!-- <form class="form-inline my-2 my-lg-0">
+
+        <!-- test EventBus emit and on START -->
+        <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" @click="search()">
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            @click="search()"
+          >
             Search
           </button>
-        </form> -->
+        </form>
+        <!-- test EventBus emit and on END-->
       </div>
     </nav>
-        <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -48,7 +53,7 @@
 /*
  * Import libs and componnents
  */
-import EventBus from '../../assets/js/eventBus';
+import EventBus from "../../assets/js/eventBus";
 export default {
   /*
    * Name of component
@@ -62,9 +67,7 @@ export default {
    * Declare variable and set default value
    */
   data() {
-    return {
-      
-    };
+    return {};
   },
   props: {
     itemMenu: {
@@ -72,9 +75,9 @@ export default {
       default: null,
     },
     isDisplay: {
-      type:Boolean,
-      default:true,
-    }
+      type: Boolean,
+      default: true,
+    },
   },
 
   /*
@@ -85,15 +88,15 @@ export default {
    * Methods
    */
   methods: {
-    search(){
-        EventBus.$emit("haha","Message EventBus");
-    }
+    search() {
+      EventBus.$emit("haha", "Message EventBus");
+    },
   },
 };
 </script>
 
 <style scoped>
-.fix-top{
+.fix-top {
   top: 0px;
 }
 </style>
