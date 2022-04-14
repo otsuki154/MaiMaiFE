@@ -2,12 +2,12 @@
   <div class="grammar">
     <!-- <button type="button" class="btn btn-outline-success" @click="getInfo()">
       GetInfor
-    </button> -->
+    </button>
 
-    <!-- <button type="button" class="btn btn-outline-success" @click="printPdf()">
+    <button type="button" class="btn btn-outline-success" @click="printPdf()">
       PrintPdf
     </button> -->
-    <!-- <input
+    <input
       type="file"
       id="csvFile"
       name="csvFile"
@@ -18,7 +18,7 @@
     <button type="button" class="btn btn-outline-success" @click="upload()">
       Up
     </button>
-    <hr /> -->
+    <hr />
     <!-- <div class="row">
       <div class="col-3 border border-success shadow p-1 rounded">
         <input class="col border border-success rounded" placeholder="search" v-model="filterText" />
@@ -29,13 +29,19 @@
         </button>
       </div>
     </div> -->
-    <!-- <div class="row border border-success shadow p-20 mb-6 rounded">
+    <div class="row border border-success shadow p-20 mb-6 rounded">
       <h1
-        class="text-success font-weight-bold d-flex align-items-center justify-content-center"
+        class="
+          text-success
+          font-weight-bold
+          d-flex
+          align-items-center
+          justify-content-center
+        "
       >
         Học thầy không tày học web của ba bé Mai
       </h1>
-    </div> -->
+    </div>
     <div class="row">
       <div class="col-3 border border-success shadow p-2 mb-6 rounded">
         <div
@@ -53,57 +59,104 @@
         </div>
       </div>
       <div class="col border border-success shadow pl-2 ml-2 rounded">
-        <div class="col shadow p-60 mb-6 rounded">
-          <div v-if="isDisplay" class="col">
-            <label
-              class="col-4 col-form-label col-form-label-sm text-secondary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Ngữ pháp
-            </label>
-            <div class="text-primary">{{ grItem.grammarContent }}</div>
-            <hr />
-            <label
-              class="col-4 col-form-label col-form-label-sm text-secondary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Nghĩa
-            </label>
-            <div class="text-danger font-weight-light">{{ grItem.meanVi }}</div>
-            <hr />
-            <label
-              class="col-4 col-form-label col-form-label-sm text-secondary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Ý Nghĩa, Chức Năng
-            </label>
-            <div>{{ grItem.meanFunction }}</div>
-            <hr />
-            <label
-              class="col-4 col-form-label col-form-label-sm text-secondary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Cách dùng
-            </label>
-            <div>{{ grItem.wayUse }}</div>
-            <hr />
-            <label
-              class="col-4 col-form-label col-form-label-sm text-secondary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Tính chất ngữ pháp
-            </label>
-            <div>{{ grItem.literaryNature }}</div>
-            <hr />
-            <label
-              class="col-4 col-form-label col-form-label-sm text-primary font-weight-bold d-flex align-items-left justify-content-left"
-            >
-              Ví dụ
-            </label>
-            <div
-              v-for="ex in listEx"
-              :key="ex.id"
-              class="col col-form-label col-form-label-sm text-success align-items-left justify-content-left"
-            >
-              <h6 class="text-left">{{ ex }}</h6>
-            </div>
+        <!-- <div class="col shadow p-60 mb-6 rounded"> -->
+        <div v-if="isDisplay" class="col ml-20">
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-secondary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Ngữ pháp
+          </label>
+          <div class="text-primary">{{ grItem.grammarContent }}</div>
+          <hr />
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-secondary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Nghĩa
+          </label>
+          <div class="text-danger font-weight-light">{{ grItem.meanVi }}</div>
+          <hr />
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-secondary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Ý Nghĩa, Chức Năng
+          </label>
+          <div>{{ grItem.meanFunction }}</div>
+          <hr />
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-secondary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Cách dùng
+          </label>
+          <div>{{ grItem.wayUse }}</div>
+          <hr />
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-secondary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Tính chất ngữ pháp
+          </label>
+          <div>{{ grItem.literaryNature }}</div>
+          <hr />
+          <label
+            class="
+              col-4 col-form-label col-form-label-sm
+              text-primary
+              font-weight-bold
+              d-flex
+              align-items-left
+              justify-content-left
+            "
+          >
+            Ví dụ
+          </label>
+          <div
+            v-for="ex in listEx"
+            :key="ex.id"
+            class="
+              col col-form-label col-form-label-sm
+              text-danger
+              align-items-left
+              justify-content-left
+            "
+          >
+            <h6 class="text-left">{{ ex }}</h6>
           </div>
         </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -148,7 +201,7 @@ export default {
   mounted() {
     this.msg = this.$route.path;
     axios
-      .get("https://nihongon1.herokuapp.com/grammar/get")
+      .get("http://localhost:2508/grammar/get")
       .then(
         function (response) {
           this.initdata = response.data;
@@ -166,7 +219,7 @@ export default {
   methods: {
     getInfo() {
       axios
-        .get("https://nihongon1.herokuapp.com/grammar/get")
+        .get("http://localhost:2508/grammar/get")
         .then(
           function (response) {
             this.data = response.data;
@@ -180,7 +233,7 @@ export default {
     },
     printPdf() {
       axios
-        .get("https://nihongon1.herokuapp.com/grammar/print2")
+        .get("http://localhost:2508/grammar/print2")
         .then(
           function (response) {
             console.log(response.data);
@@ -217,7 +270,7 @@ export default {
         formData.append("files", file);
       }
       axios
-        .post("https://nihongon1.herokuapp.com/grammar/upcsv", formData, {
+        .post("http://localhost:2508/grammar/upcsv", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then(
