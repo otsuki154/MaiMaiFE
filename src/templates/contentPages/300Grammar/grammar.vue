@@ -39,7 +39,7 @@
           justify-content-center
         "
       >
-        Học thầy không tày học web của ba bé Mai
+        Học thầy không tày học web của ba bé Mai, ku Khoa
       </h1>
     </div>
     <div class="row">
