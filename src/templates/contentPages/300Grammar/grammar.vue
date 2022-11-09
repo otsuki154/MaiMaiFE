@@ -1,12 +1,12 @@
 <template>
   <div class="grammar">
-    <!-- <button type="button" class="btn btn-outline-success" @click="getInfo()">
+    <button type="button" class="btn btn-outline-success" @click="getInfo()">
       GetInfor
     </button>
 
-    <button type="button" class="btn btn-outline-success" @click="printPdf()">
-      PrintPdf
-    </button> -->
+    <button type="button" class="btn btn-outline-success" @click="download()">
+      Download File
+    </button>
     <input
       type="file"
       id="csvFile"
@@ -30,15 +30,7 @@
       </div>
     </div> -->
     <div class="row border border-success shadow p-20 mb-6 rounded">
-      <h1
-        class="
-          text-success
-          font-weight-bold
-          d-flex
-          align-items-center
-          justify-content-center
-        "
-      >
+      <h1 class="tdtin d-flex align-items-center justify-content-center">
         Học thầy không tày học web của ba bé Mai, ku Khoa
       </h1>
     </div>
@@ -169,6 +161,8 @@
 
 import axios from "axios";
 import Common from "../../../assets/js/Common";
+import UrlConstants from "../../../assets/const/UrlConstants.json";
+import "../../../assets/css/grammar.css";
 // import EventBus from "../../../assets/js/eventBus";
 
 export default {
@@ -193,6 +187,7 @@ export default {
       listEx: {},
       isDisplay: false,
       filterText: "",
+      submitFlg: false,
     };
   },
   /*
@@ -200,18 +195,7 @@ export default {
    */
   mounted() {
     this.msg = this.$route.path;
-    axios
-      .get("http://localhost:2508/grammar/get")
-      .then(
-        function (response) {
-          this.initdata = response.data;
-
-          // Common.getCsvFile(response, `${+new Date()}.csv`);
-        }.bind(this)
-      )
-      .catch(function (error) {
-        console.log(error);
-      });
+    this.getInfo();
   },
   /*
    * Methods
@@ -219,17 +203,33 @@ export default {
   methods: {
     getInfo() {
       axios
-        .get("http://localhost:2508/grammar/get")
+        .get(UrlConstants.URL_LOCAL + UrlConstants.GRAMMAR + UrlConstants.GET)
         .then(
           function (response) {
             this.data = response.data;
-
-            // Common.getCsvFile(response, `${+new Date()}.csv`);
           }.bind(this)
         )
         .catch(function (error) {
           console.log(error);
         });
+    },
+    download() {
+      const url = "http://localhost:2508/grammar/print2";
+      //フォームの生成
+      let form = document.createElement("form");
+      if (!form) {
+        console.log("formの生成に失敗しました。");
+      }
+      form.action = url;
+      form.method = "post";
+      // bodyに追加
+      document.body.appendChild(form);
+      // コントローラーにsubmit
+      form.submit();
+      // bodyに削除
+      document.body.removeChild(form);
+
+      setTimeout(1000);
     },
     printPdf() {
       axios

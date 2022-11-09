@@ -1,0 +1,9 @@
+.tdtin {
+  text-decoration: none;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  /* font-family: "Dancing Script", cursive;
+  font-weight: bold; */
+  line-height: 15px;
+  color: rgb(138, 169, 15);
+}

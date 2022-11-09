@@ -1,6 +1,8 @@
 {
-    "LOGIN"   : "/login",
-    "REGISTER_GET"   : "/register/get",
-    "URL"   : "http://localhost:2508"
-
+    "URL_GLOBAL": "https://nihongon1.herokuapp.com/",
+    "URL_LOCAL": "http://localhost:2508",
+    "GET": "/get",
+    "LOGIN": "/login",
+    "USERS": "/users",
+    "GRAMMAR": "/grammar"
 }
