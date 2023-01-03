@@ -1,8 +1,8 @@
 <template>
   <div class="grammar">
-    <button type="button" class="btn btn-outline-success" @click="getInfo()">
+    <!-- <button type="button" class="btn btn-outline-success" @click="getInfo()">
       GetInfor
-    </button>
+    </button> -->
 
     <button type="button" class="btn btn-outline-success" @click="download()">
       Download File
@@ -213,8 +213,11 @@ export default {
           console.log(error);
         });
     },
+    /*
+     * Download File Method
+     */
     download() {
-      const url = "http://localhost:2508/grammar/print2";
+      const url = "http://localhost:2508/grammar/download";
       //フォームの生成
       let form = document.createElement("form");
       if (!form) {
@@ -231,27 +234,9 @@ export default {
 
       setTimeout(1000);
     },
-    printPdf() {
-      axios
-        .get("http://localhost:2508/grammar/print2")
-        .then(
-          function (response) {
-            console.log(response.data);
-            // Common.getCsvFile(response,`${+ new Date()}.pdf`);
-            // Common.downloadFile(response,"filetest")
-            //  var filename = response.headers.get('content-disposition').split('=')[1]
-            const blob = new Blob([response.data], { type: "application/pdf" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "label.pdf";
-            link.click();
-            URL.revokeObjectURL(link.href);
-          }.bind(this)
-        )
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
+    /*
+     * Upload File Method
+     */
     handleUpload() {
       var _this = this;
       _this.files = [];
@@ -262,6 +247,9 @@ export default {
       }
       console.log(_this.files);
     },
+    /*
+     * Upload File Method
+     */
     upload() {
       var _this = this;
       let formData = new FormData();
@@ -285,13 +273,18 @@ export default {
           console.log(error);
         });
     },
+    /*
+     * Click a Grammar Event
+     */
     clickContent(item) {
-      // console.log(item);
       this.grItem = item;
       this.isDisplay = true;
       this.listEx = item.example.split("★");
       window.scrollTo(0, 0);
     },
+    /*
+     * Search method
+     */
     search() {
       console.log(this.filterText);
       this.grDataFilter = this.initdata.grammarContent.filter((v) =>
