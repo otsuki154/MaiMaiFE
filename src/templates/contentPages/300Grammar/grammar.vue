@@ -206,7 +206,7 @@ export default {
         .get(UrlConstants.URL_LOCAL + UrlConstants.GRAMMAR + UrlConstants.GET)
         .then(
           function (response) {
-            this.data = response.data;
+            this.initdata = response.data;
           }.bind(this)
         )
         .catch(function (error) {
