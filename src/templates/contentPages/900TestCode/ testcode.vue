@@ -1,19 +1,15 @@
 <template>
-  <div class="kanji">
-    <h1>Coming Soon 漢字</h1>
+  <div class="test">
+    <h1>Coming Soon 機能確認専用ページ</h1>
   </div>
 </template>
 
 <script>
-/*
- * Import libs and componnents
- */
-// import abc from '../../../assets/resources/comingsoon.jpg'
 export default {
   /*
    * Name of component
    */
-  name: "kanji",
+  name: "test",
   /*
    * Declare components
    */

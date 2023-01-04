@@ -1,7 +1,7 @@
 <template>
   <div v-if="isDisplay" class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fix-top">
-      <a class="navbar-brand" href="/">Jp</a>
+      <a class="navbar-brand" href="/">Xuân Thu</a>
       <button
         class="navbar-toggler"
         type="button"

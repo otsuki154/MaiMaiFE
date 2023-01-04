@@ -20,6 +20,7 @@ export default {
         { id: 3, url: "/kanji", name: "漢字" },
         { id: 4, url: "/grammar", name: "文法" },
         { id: 5, url: "/contact", name: "連絡先" },
+        { id: 6, url: "/test", name: "機能確認専用" },
       ],
       isDisplay: true,
     };
